@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Promise to You, Themba</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffebee, #fce4ec, #f3e5f5);
+            color: #5d4037;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid #ffcdd2;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #e91e63, #ff4081);
+            color: white;
+            text-align: center;
+            padding: 40px 30px;
+            position: relative;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M1200 120L0 16.48 0 0 1200 0 1200 120z' fill='white'/%3E%3C/svg%3E");
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .couple-names {
+            font-size: 1.8rem;
+            margin: 20px 0;
+            font-weight: 500;
+            color: #fff;
+            opacity: 0.9;
+        }
+        
+        .letter-container {
+            padding: 40px;
+        }
+        
+        .salutation {
+            font-size: 1.8rem;
+            color: #e91e63;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .salutation i {
+            margin-right: 15px;
+            color: #ff4081;
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .message p {
+            margin-bottom: 25px;
+            padding-left: 10px;
+            border-left: 3px solid #ffcdd2;
+            padding-left: 20px;
+        }
+        
+        .highlight {
+            background-color: #fce4ec;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-style: italic;
+            text-align: center;
+            color: #d81b60;
+            border: 1px solid #f8bbd9;
+        }
+        
+        .love-declaration {
+            text-align: center;
+            font-size: 2rem;
+            color: #e91e63;
+            margin: 40px 0;
+            padding: 25px;
+            background: #fce4ec;
+            border-radius: 15px;
+            border: 2px solid #f8bbd9;
+            font-weight: 600;
+        }
+        
+        .signature {
+            text-align: right;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 2px dashed #ffcdd2;
+        }
+        
+        .signature h3 {
+            font-size: 1.8rem;
+            color: #e91e63;
+            margin-bottom: 10px;
+        }
+        
+        .signature .date {
+            color: #795548;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: #795548;
+            background: #f5f5f5;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .heart {
+            color: #e91e63;
+            animation: heartbeat 1.5s infinite;
+            margin: 0 5px;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.2); }
+            10% { transform: scale(1); }
+            15% { transform: scale(1.2); }
+            20% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Simple hearts decoration */
+        .heart-decoration {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 24px;
+        }
+        
+        .heart1 { top: 20px; left: 20px; }
+        .heart2 { top: 20px; right: 20px; }
+        .heart3 { bottom: 20px; left: 20px; }
+        .heart4 { bottom: 20px; right: 20px; }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .letter-container {
+                padding: 25px;
+            }
+            
+            .salutation {
+                font-size: 1.5rem;
+            }
+            
+            .message {
+                font-size: 1.1rem;
+            }
+            
+            .love-declaration {
+                font-size: 1.6rem;
+                padding: 20px;
+            }
+            
+            .couple-names {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .letter-container {
+                padding: 20px;
+            }
+            
+            .love-declaration {
+                font-size: 1.4rem;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="heart-decoration heart1">❤️</div>
+            <div class="heart-decoration heart2">❤️</div>
+            <div class="heart-decoration heart3">❤️</div>
+            <div class="heart-decoration heart4">❤️</div>
+            
+            <h1>My New Year Promise to You</h1>
+            <div class="couple-names">From Someone Who Loves You → Themba</div>
+            <p>A sweet promise for our beautiful year ahead</p>
+        </header>
+        
+        <div class="letter-container">
+            <div class="salutation">
+                <i class="fas fa-heart"></i> My Dearest Themba,
+            </div>
+            
+            <div class="message">
+                <p>As we welcome this New Year, I just want to tell you how much you mean to me. You make every day brighter just by being in it.</p>
+                
+                <p>This year, I promise to be your biggest supporter, your comfort when you need it, and the person who always believes in you. I promise to appreciate the little things about you that make me smile every day.</p>
+                
+                <div class="highlight">
+                    You're my favorite person to laugh with, my safe place, and my happy thought. I'm so grateful for you.
+                </div>
+                
+                <p>I can't wait for all the simple, beautiful moments we'll share this year - the silly laughs, and everything in between.</p>
+            </div>
+            
+            <div class="love-declaration">
+                I love you, Themba Tito Mnisi! 💖
+            </div>
+            
+            <div class="signature">
+                <h3>Always yours,</h3>
+                <p>With all my love</p>
+                <p class="date">New Year's Day, 2026</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Made with <i class="fas fa-heart heart"></i> for my favorite person</p>
+            <p>Noloyiso Precious Copantsi</p>
+        </div>
+    </div>
+    
+    <script>
+        // Simple floating hearts animation
+        function createFloatingHearts() {
+            const colors = ['#ff4081', '#e91e63', '#f06292', '#ec407a'];
+            const container = document.querySelector('.letter-container');
+            
+            // Create 8 simple hearts
+            for (let i = 0; i < 8; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤';
+                heart.style.position = 'absolute';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%';
+                heart.style.opacity = '0.1';
+                heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                heart.style.zIndex = '-1';
+                heart.style.animation = `float ${4 + Math.random() * 6}s infinite ease-in-out`;
+                container.appendChild(heart);
+            }
+            
+            // Add the float animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0%, 100% { transform: translateY(0) rotate(0deg); }
+                    50% { transform: translateY(-15px) rotate(10deg); }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // Add a subtle effect when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingHearts();
+            
+            // Make the love declaration pulse gently
+            const loveDeclaration = document.querySelector('.love-declaration');
+            setInterval(() => {
+                loveDeclaration.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    loveDeclaration.style.transform = 'scale(1)';
+                }, 300);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
